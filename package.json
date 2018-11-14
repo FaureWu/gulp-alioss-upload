@@ -1,0 +1,32 @@
+{
+  "name": "gulp-alioss-upload",
+  "version": "1.0.0",
+  "description": "a gulp plugin to upload file to alioss",
+  "main": "index.js",
+  "scripts": {
+    "release": "npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaureWu/gulp-alioss-upload.git"
+  },
+  "keywords": [
+    "gulp",
+    "alioss",
+    "upload",
+    "image"
+  ],
+  "author": "FaureWu <502556093@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FaureWu/gulp-alioss-upload/issues"
+  },
+  "homepage": "https://github.com/FaureWu/gulp-alioss-upload#readme",
+  "dependencies": {
+    "ali-oss": "^6.0.1",
+    "ansi-colors": "^3.2.1",
+    "md5-file": "^4.0.0",
+    "preprocess": "^3.1.0",
+    "through2": "^3.0.0"
+  }
+}
