@@ -1,6 +1,6 @@
 {
   "name": "gulp-alioss-upload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a gulp plugin to upload file to alioss",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,6 @@
     "ali-oss": "^6.0.1",
     "ansi-colors": "^3.2.1",
     "md5-file": "^4.0.0",
-    "preprocess": "^3.1.0",
     "through2": "^3.0.0"
   }
 }

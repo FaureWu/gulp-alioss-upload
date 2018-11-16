@@ -509,12 +509,6 @@ prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
 
-preprocess@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/preprocess/-/preprocess-3.1.0.tgz#a44e5cdd5bbb5a54f0ad289aaeed80995d7d938a"
-  dependencies:
-    xregexp "3.1.0"
-
 process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
@@ -781,10 +775,6 @@ xmlbuilder@~9.0.1:
 xregexp@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-2.0.0.tgz#52a63e56ca0b84a7f3a5f3d61872f126ad7a5943"
-
-xregexp@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-3.1.0.tgz#14d8461e0bdd38224bfee5039a0898fc42fcd336"
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"

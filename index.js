@@ -3,7 +3,6 @@ const ALIOSS = require("ali-oss");
 const fs = require("fs");
 const pathUtil = require("path");
 const md5File = require("md5-file");
-const process = require("process");
 const color = require("ansi-colors");
 
 /**
