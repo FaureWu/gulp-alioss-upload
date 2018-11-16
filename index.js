@@ -5,6 +5,7 @@ const pathUtil = require("path");
 const md5File = require("md5-file");
 const color = require("ansi-colors");
 
+const uploadCache = {}
 /**
  *
  * @param {Object} options
@@ -36,7 +37,6 @@ module.exports = function(options) {
     bucket
   });
 
-  const uploadCache = {};
   let count = 0;
 
   return through.obj(function(file, enc, cb) {
@@ -58,9 +58,8 @@ module.exports = function(options) {
 
       return `.${format}`
     }, '')
-    const reg = new RegExp(`@oss/\\S+(${formatStr})`, 'gi')
+    const reg = new RegExp(`${prefix}/\\S+(${formatStr})`, 'gi')
     let content = file.contents.toString();
-
     const matches = content.match(reg);
     const checkTask = () => {
       if (matches.length <= 0 && count <= 0) {
@@ -90,6 +89,9 @@ module.exports = function(options) {
 
         const fileKey = md5File.sync(realPath);
         if (uploadCache[fileKey]) {
+          if (typeof uploadCache[fileKey] !== "boolean") {
+            content = content.replace(new RegExp(match, "g"), uploadCache[fileKey].url);
+          }
           checkTask();
           continue;
         }
@@ -110,6 +112,7 @@ module.exports = function(options) {
             );
             content = content.replace(new RegExp(match, "g"), result.url);
             count -= 1;
+            uploadCache[fileKey] = result
             checkTask();
           })
           .catch(error => {

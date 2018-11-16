@@ -1,6 +1,6 @@
 {
   "name": "gulp-alioss-upload",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a gulp plugin to upload file to alioss",
   "main": "index.js",
   "scripts": {
