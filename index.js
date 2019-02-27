@@ -58,7 +58,7 @@ module.exports = function(options) {
 
       return `.${format}`
     }, '')
-    const reg = new RegExp(`${prefix}/\\S+(${formatStr})`, 'gi')
+    const reg = new RegExp(`${prefix}\/[a-zA-Z-_\u4e00-\u9fa5/0-9@#!~]+(${formatStr})`, 'gi')
     let content = file.contents.toString();
     const matches = content.match(reg);
     const checkTask = () => {
