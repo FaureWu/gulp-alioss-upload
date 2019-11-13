@@ -4,6 +4,7 @@ const fs = require("fs");
 const pathUtil = require("path");
 const md5File = require("md5-file");
 const color = require("ansi-colors");
+const url = require('url')
 
 const uploadCache = {}
 /**
@@ -101,6 +102,9 @@ module.exports = function(options) {
         ossClient
           .put(fileKey, realPath)
           .then(result => {
+            const urlBody = url.parse(result.url)
+            result.regionUrl = `${region}${urlBody.path}`
+
             console.log(
               color.yellow("上传CDN成功"),
               " ",
@@ -108,9 +112,9 @@ module.exports = function(options) {
               " ",
               showPath,
               " ",
-              result.url
+              result.regionUrl
             );
-            content = content.replace(new RegExp(match, "g"), result.url);
+            content = content.replace(new RegExp(match, "g"), result.regionUrl);
             count -= 1;
             uploadCache[fileKey] = result
             checkTask();
