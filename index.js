@@ -91,7 +91,7 @@ module.exports = function(options) {
         const fileKey = md5File.sync(realPath);
         if (uploadCache[fileKey]) {
           if (typeof uploadCache[fileKey] !== "boolean") {
-            content = content.replace(new RegExp(match, "g"), uploadCache[fileKey].url);
+            content = content.replace(new RegExp(match, "g"), uploadCache[fileKey].regionUrl);
           }
           checkTask();
           continue;
